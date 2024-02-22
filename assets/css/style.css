@@ -370,6 +370,42 @@ input[type="radio" i] {
     cursor: pointer;
 }
 
+input[type='radio'] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #999;
+    border-radius: 50%;
+    outline: none;
+    box-shadow: 0 0 5px #999;
+    transition: box-shadow 0.3s ease;
+    border: 1px solid var(--color-1a9);
+}
+
+input[type='radio']:before {
+    content: '';
+    display: block;
+    width: 67%;
+    height: 65%;
+    margin: 19% auto;
+    border-radius: 50%;
+    box-shadow: 0px 0px 4px var(--color-1a9);
+}
+
+label[for="most-like"] {
+    position: relative;
+    bottom: 18px;
+}
+
+label[for="recived"] {
+    position: relative;
+    bottom: 4px;
+}
+
+input[type='radio']:checked:before {
+    background: var(--color-1a9);
+}
+
 @media (min-width:992px) {
     .lg-form {
         display: none;
@@ -378,6 +414,10 @@ input[type="radio" i] {
 
 @media (max-width:992px) {
     .search-here {
+        display: none;
+    }
+
+    ::-webkit-scrollbar {
         display: none;
     }
 
@@ -431,7 +471,8 @@ input[type="radio" i] {
     .most-like-lg {
         width: 88px;
         height: 28px;
-        background-color: var(--color-dfdf);
+        background-color: var(--primary-color);
+        color: var(--white-color);
         border-radius: 25.5px;
         border: none;
         outline: none;
@@ -445,6 +486,7 @@ input[type="radio" i] {
         width: 134px;
         height: 28px;
         background-color: var(--color-dfdf);
+        color: var(--primary-color);
         border-radius: 25.5px;
         border: none;
         outline: none;
@@ -479,11 +521,11 @@ input[type="radio" i] {
     .main-box-follow {
         flex-direction: row;
         overflow-x: scroll;
+        margin-bottom: 16px;
     }
 
     .copywrite {
-        margin-top: 18px;
-        margin-bottom: 18px;
+        display: none;
     }
 
     .display-flex {
